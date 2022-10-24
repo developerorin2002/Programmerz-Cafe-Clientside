@@ -1,0 +1,40 @@
+
+.header{
+    background-color: #1E2B47;
+}
+
+.logo img{
+    height: 70px;
+    width: 80px;
+    border-radius: 10px;
+
+}
+.profile-img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.header-link a{
+    text-decoration: none;
+    margin-right: 10px;
+    color: #fff;
+    font-size: 18px;
+}
+
+
+.dark-icon{
+    font-size: 25px;
+}
+
+.navbar-toggler-icon{
+    color: #fff;
+}
+
+.logo-custom{
+    text-decoration: none;
+}
+
+
+
+
+
