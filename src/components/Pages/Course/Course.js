@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Course.css'
 const Course = ({course}) => {
     const {image_url,id,course_fee,course_name,course_description} = course;
@@ -16,7 +17,7 @@ const Course = ({course}) => {
                             course_description ? course_description.slice(0,50) +'...' : course_description
                         }
                     </p>
-                    <button className='course-btn'>Purchase Now</button>
+                    <button className='course-btn'><Link to={`/course/${id}`}>Purchase Now</Link></button>
                 </div>
             </div>
     );

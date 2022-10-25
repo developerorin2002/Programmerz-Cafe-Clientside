@@ -5,7 +5,7 @@ const Category = ({category}) => {
     const {category_name} = category;
     return (
         <div className='category'>
-            <p className='category-single'><Link className='category-link' to={`/category/${category_name}`}>{category_name}</Link></p>
+            <p className='category-single'><Link className='category-link' to={`/courses/${category_name}`}>{category_name}</Link></p>
         </div>
     );
 };

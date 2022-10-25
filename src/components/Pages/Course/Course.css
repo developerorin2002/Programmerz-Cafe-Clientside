@@ -17,3 +17,11 @@
     font-size: 18px;
     border-radius: 2px;
 }
+.course-btn a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.course-btn a:hover {
+    color: #fff;
+}
