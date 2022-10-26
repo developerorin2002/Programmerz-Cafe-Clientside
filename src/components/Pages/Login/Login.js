@@ -29,9 +29,7 @@ const Login = () => {
         })
         // reset form 
         form.reset();
-    }
-
-
+    };
     // google signIn
     const googleSignIn = () =>{
         handleGoogle()
