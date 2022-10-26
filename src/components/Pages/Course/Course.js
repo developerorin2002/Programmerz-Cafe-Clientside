@@ -6,7 +6,7 @@ const Course = ({course}) => {
 
     return (
             <div className='col-lg-4'>
-                <div className='course-card'>
+                <div className='course-card py-3 px-3'>
                     <div className='top-image'>
                         <img src={image_url} alt="" />
                     </div>

@@ -7,6 +7,7 @@ const auth = getAuth(app)
 export const LearningAuthContext = createContext();
 const provider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
+
 const AuthContext = ({children}) => {
     // user state
     const [user , setUser] = useState(null);

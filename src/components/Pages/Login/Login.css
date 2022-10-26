@@ -1,11 +1,15 @@
 .email,.password{
-    border: 1px solid #0000006a;
+    border: 1px solid #eaeaea;
     padding: 10px 20px;
-    
+    border-radius: 25px;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+    font-size: 18px;
+
 }
 .login-form{
     border: 1px solid #eaeaea;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+    border-radius: 30px;
 }
 .login-btn{
     background-color: #6047EC;
@@ -28,5 +32,10 @@
     border-radius: 30px;
     padding: 5px;
     font-size: 18px;
+    font-weight: bold;
+}
+.register-link{
+    text-decoration: none;
+    color: #6047EC;
     font-weight: bold;
 }

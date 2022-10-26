@@ -6,9 +6,9 @@ const PrivateRoutes = ({children}) => {
     const location = useLocation();
     const {loading , user} = useContext(LearningAuthContext);
     if(loading){
-        return <Spinner className='text-center mt-4'  animation="border" />
+        return <Spinner className='text-center mt-4'animation="border" />
     }
-    if(user&&user.uid){
+    if(user && user.uid){
         return children;
     }
     return <Navigate to='/login' state={{from:location}} replace/>

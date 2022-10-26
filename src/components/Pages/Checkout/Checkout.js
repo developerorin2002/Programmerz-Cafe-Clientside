@@ -5,7 +5,9 @@ import { useLoaderData } from 'react-router-dom';
 import { useReactToPrint } from 'react-to-print';
 import { LearningAuthContext } from '../../AuthContext/AuthContext';
 const Checkout = () => {
+
     const {user} = useContext(LearningAuthContext);
+    // use react pdf to download pdf
     const {image_url,id,course_fee,course_name} = useLoaderData();
     const componentRef = useRef();
     const handlePrint = useReactToPrint({
@@ -26,13 +28,12 @@ const Checkout = () => {
                     </div>
                     <div className="col-lg-7" ref={componentRef}>
                         <div className='pdf-border'>
-                            
                             <div>
                                 <h2 className='text-center mt-2 text-p'>Programmerz Cafe</h2>
-                                <h4>BILLING DETAILS</h4>
+                                <h4 className='text-center'>BILLING DETAILS</h4>
                             </div>
                             <div>
-                                <div className="row">
+                                <div className="row mx-3">
                                     <div className="col-lg-6">
                                         <h5 className=' custom-border-pdf'>Name : {user.displayName}</h5>
                                     </div>

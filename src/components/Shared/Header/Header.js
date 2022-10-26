@@ -8,6 +8,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { LearningAuthContext } from '../../AuthContext/AuthContext';
 import DarkModeToggle from "react-dark-mode-toggle";
 import './Header.css';
+import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 
 const Header = () => {
     const {user , landleLogOut} = useContext(LearningAuthContext);
@@ -19,6 +20,12 @@ const Header = () => {
     const handleLogOut =()=>{
         landleLogOut();
     }
+    // tooltip
+    const renderTooltip = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+          {user.displayName}
+        </Tooltip>
+        )
     return (
         <div className='main-header'>
             <Navbar className='header' expand="lg">
@@ -50,9 +57,18 @@ const Header = () => {
                                 <div className="profile">
                                     <div className="row d-flex align-items-center">
                                         <div className="col-lg-2">
-                                            {
+                                        <OverlayTrigger
+                                                    placement="right"
+                                                    delay={{ show: 250, hide: 400 }}
+                                                    overlay={renderTooltip}
+                                                    >
+                                                    <div>
+                                                    {
                                                 user&&user.uid?<><img className='profile-img' src={user?.photoURL? user.photoURL:profile} alt="" /></> : <></>
-                                            }
+                                                    }
+                                                    </div>
+                                                    </OverlayTrigger>
+                                           
                                         </div>
                                         <div className="col-lg-10 py-2">
                                             <p className='mb-0 text-white'>{user?.displayName}</p>

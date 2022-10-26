@@ -60,10 +60,11 @@ const Login = () => {
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-lg-8 justify-content-center py-4">
+                        <h2 className='text-center py-3'>PLEASE SIGN IN </h2>
                         <img src={loginImg2} className="w-50" alt="" />
                     </div>
                     <div className="col-lg-4 py-4">
-                        <div className='login-form px-2'>
+                        <div className='login-form px-3 py-4'>
                             <h3 className='text-center pt-3'>SIGN IN</h3>
                             <span className='user-profile'><FaUser/></span>
                             <form onSubmit={handleFormSubmit}>
@@ -73,14 +74,16 @@ const Login = () => {
                                <div>
                                 <input type="password" name='password' className='password w-100 mt-2 mb-2' placeholder='Your Password' />
                                </div>
+                               <div className='py-2'>
                                <button type='submit' className='login-btn '>LogIn</button>
+                               </div>
                             </form>
-                            <p>Dont Have An Account? Please <Link to='/register'>Register Here</Link></p>
+                            <p>Dont Have An Account? Please <Link className='register-link' to='/register'>Register</Link></p>
                             <div className='mt-2'>
-                                <button onClick={googleSignIn} className='icon-border'> <img src={googleImg} className="google-icon" alt="" /> continue with google</button>
+                                <button onClick={googleSignIn} className='icon-border px-3 py-2'> <img src={googleImg} className="google-icon" alt="" /> Continue with google</button>
                             </div>
                             <div className='mt-2'>
-                                <button onClick={githubSignIn} className='icon-border'> <img src={githubImg} className="google-icon" alt="" /> continue with github</button>
+                                <button onClick={githubSignIn} className='icon-border px-3 py-2'> <img src={githubImg} className="google-icon" alt="" /> Continue with github</button>
                             </div>
 
                         </div>

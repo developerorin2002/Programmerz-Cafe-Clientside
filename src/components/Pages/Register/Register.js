@@ -57,13 +57,13 @@ const Register = () => {
         <div>
             <div className="container">
                 <div className="row align-items-center">
-                    <div className="col-lg-6">
+                    <div className="col-lg-8">
                         <h2 className='text-center'>Please Create An Account</h2>
                         <img src={registerImg} className="w-100" alt="" />
                     </div>
-                    <div className="col-lg-6">
-                        <div className='login-form px-2'>
-                            <h3 className='text-center pt-3'>SIGN UP HERE </h3>
+                    <div className="col-lg-4">
+                        <div className='login-form px-2 py-3'>
+                            <h3 className='text-center'>SIGN UP HERE </h3>
                             <span className='user-profile'><FaUser/></span>
                             <form onSubmit={handleRegisterSubmit}>
                                 <div>
@@ -78,14 +78,16 @@ const Register = () => {
                                <div>
                                 <input type="password" name='password' className='password w-100 mt-2 mb-2' placeholder='Your Password' />
                                </div>
-                               <button type='submit' className='login-btn '>Sign Up</button>
+                              <div className='py-2'>
+                                <button type='submit' className='login-btn '>Sign Up</button>
+                              </div>
                             </form>
-                            <p>Are You Already Registered ? Please <Link to='/login'>Login Here</Link></p>
+                            <p>Are You Already Registered ? Please <Link className='register-link' to='/login'>Login</Link></p>
                             <div className='mt-2'>
-                                <button className='icon-border' onClick={googleSignIn}> <img src={googleImg} className="google-icon" alt="" />continue with google</button>
+                                <button className='icon-border px-3 py-2' onClick={googleSignIn}> <img src={googleImg} className="google-icon" alt="" />continue with google</button>
                             </div>
                             <div className='mt-2'>
-                                <button className='icon-border' onClick={githubSignIn}> <img src={githubImg} className="google-icon" alt="" /> continue with github</button>
+                                <button className='icon-border px-3 py-2' onClick={githubSignIn}> <img src={githubImg} className="google-icon" alt="" /> continue with github</button>
                             </div>
 
                         </div>

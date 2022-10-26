@@ -12,6 +12,7 @@ import Register from "../../Pages/Register/Register";
 import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 
 export const router = createBrowserRouter([
+    
     {
         path:'/',
         element:<HomeLayout></HomeLayout>,
