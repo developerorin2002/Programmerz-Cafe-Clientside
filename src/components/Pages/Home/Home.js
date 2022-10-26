@@ -11,10 +11,10 @@ const Home = () => {
                     <div className="col-lg-6">
                         <h1 className='text-white py-3'>Master everything you need to become a Problem Solver</h1>
                        <div>
-                        <button className='btn-course'><Link to='/courses' className='mx-2' style={{'textDecoration':'none' , 'color':'white'}}>Browse Courses</Link><FaArrowRight/></button>
+                        <button className='btn-course py-3 my-3'><Link to='/courses' className='mx-2' style={{'textDecoration':'none' , 'color':'white'}}>Browse Courses</Link><FaArrowRight/></button>
                        </div>
                     </div>
-                    <div className="col-lg-6">
+                    <div className="col-lg-6 my-3 py-3">
                         <img className='w-100' src={programmer} alt="" />
                     </div>
                 </div>
