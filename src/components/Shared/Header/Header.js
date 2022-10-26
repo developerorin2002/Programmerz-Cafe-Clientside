@@ -30,7 +30,7 @@ const Header = () => {
         <div className='main-header'>
             <Navbar className='header' expand="lg">
                 <Container>
-                    <Navbar.Brand><Link to='/' className='text-center logo-custom text-white'><h3>Programmerz Cafe</h3></Link></Navbar.Brand>
+                    <Navbar.Brand><Link to='/' className='text-center logo-custom text-white'><h3>Programmerz <span className='header-text'>Cafe</span></h3></Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                     <Nav
