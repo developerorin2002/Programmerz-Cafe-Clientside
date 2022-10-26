@@ -4,7 +4,6 @@ import Course from '../Course/Course';
 
 const Courses = () => {
     const allCourses = useLoaderData();
-    console.log(allCourses)
     return (
         <div>
            <div className="row mt-4 mx-2 g-3">

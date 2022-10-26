@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import profile from '../../Assets/Images/profile.png'
-import { FaRegMoon , FaSignOutAlt} from 'react-icons/fa';
+import { FaSignOutAlt} from 'react-icons/fa';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { LearningAuthContext } from '../../AuthContext/AuthContext';
+import DarkModeToggle from "react-dark-mode-toggle";
 import './Header.css';
+
 const Header = () => {
+    const {user , landleLogOut} = useContext(LearningAuthContext);
+    // dark mode state 
+    const [isDarkMode , setIsDarkMode ] = useState(false);
+    
+
+    // handle logOut 
+    const handleLogOut =()=>{
+        landleLogOut();
+    }
     return (
         <div className='main-header'>
             <Navbar className='header' expand="lg">
@@ -21,26 +33,33 @@ const Header = () => {
                                <p className='mb-0'><Link to='/home'> Home </Link></p>
                                 <p className='mb-0'><Link to='/courses'> Courses </Link></p>
                                 <p className='mb-0'><Link to='/blog'> Blog </Link></p>
-                                <p className='mb-0'> <Link to='/login'> Login </Link></p>
-                                <p className='mb-0'><Link to='/register'> Register </Link></p>
+                                {
+                                    user&&user.uid ? <></> : <><p className='mb-0'> <Link to='/login'> Login </Link></p>
+                                    <p className='mb-0'><Link to='/register'> Register </Link></p></>
+                                }
+                                
                             </div>
                     </Nav>
                     <div className="row d-flex align-items-center">
-                        <div className="col-lg-2">
+                        <div className="col-lg-3">
                             <div className='toggle-theme'>
-                                    <p className='text-white dark-icon'><FaRegMoon/> </p>
+                            <DarkModeToggle onChange={setIsDarkMode}checked={isDarkMode}size={60}/>
                             </div>
                         </div>
-                           <div className="col-lg-10">
+                           <div className="col-lg-9">
                                 <div className="profile">
                                     <div className="row d-flex align-items-center">
                                         <div className="col-lg-2">
-                                            <img className='profile-img' src={profile} alt="" />
+                                            {
+                                                user&&user.uid?<><img className='profile-img' src={user?.photoURL? user.photoURL:profile} alt="" /></> : <></>
+                                            }
                                         </div>
                                         <div className="col-lg-10 py-2">
-                                            <p className='mb-0 text-white'>Fahim Muntasir Orin</p>
+                                            <p className='mb-0 text-white'>{user?.displayName}</p>
                                             <div>
-                                                <button className='log-out mt-2'>SignOut <FaSignOutAlt/></button>
+                                               {
+                                                user&&user.uid? <> <button onClick={handleLogOut}  className='log-out mt-2'>SignOut <FaSignOutAlt/></button></> :<></>
+                                               }
                                             </div>
                                         </div>
                                         

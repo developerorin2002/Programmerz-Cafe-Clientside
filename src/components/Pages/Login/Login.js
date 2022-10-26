@@ -1,10 +1,60 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import loginImg2 from '../../Assets/Images/loginImg2.svg';
 import { FaUser } from 'react-icons/fa';
 import googleImg from '../../Assets/icons/google.png';
 import githubImg from '../../Assets/icons/github.png'
 import './Login.css'
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { LearningAuthContext } from '../../AuthContext/AuthContext';
+import toast from 'react-hot-toast';
 const Login = () => {
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";;
+    const navigate = useNavigate();
+    const {handleGoogle , handleGithub , handleLogin } = useContext(LearningAuthContext);
+    // login with form
+    const handleFormSubmit = (event) =>{
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        handleLogin(email , password)
+        .then(res=>{
+            toast.success('Login Successfull');
+            navigate(from, { replace: true });
+            
+        }) 
+        .catch(err=>{
+            toast.error(err.message);
+        })
+        // reset form 
+        form.reset();
+    }
+
+
+    // google signIn
+    const googleSignIn = () =>{
+        handleGoogle()
+        .then(res=>{
+            toast.success('Login Successfully')
+            navigate(from,{replace:true})
+        })
+        .catch(err=>{
+            toast.error(err.message)
+        })
+    };
+    // githubSignIn
+    const githubSignIn = () =>{
+        handleGithub()
+        .then(res=>{
+            toast.success('Login Successfully')
+            navigate(from,{replace:true})
+        })
+        .catch(err=>{
+            toast.error(err.message)
+        })
+    }
+
     return (
         <div>
             <div className="container">
@@ -16,7 +66,7 @@ const Login = () => {
                         <div className='login-form px-2'>
                             <h3 className='text-center pt-3'>SIGN IN</h3>
                             <span className='user-profile'><FaUser/></span>
-                            <form>
+                            <form onSubmit={handleFormSubmit}>
                                <div>
                                 <input type="email" name='email' className='email w-100 mt-2 mb-2' placeholder='Your Email'/>
                                </div>
@@ -25,11 +75,12 @@ const Login = () => {
                                </div>
                                <button type='submit' className='login-btn '>LogIn</button>
                             </form>
+                            <p>Dont Have An Account? Please <Link to='/register'>Register Here</Link></p>
                             <div className='mt-2'>
-                                <p className='icon-border'> <img src={googleImg} className="google-icon" alt="" /> continue with google</p>
+                                <button onClick={googleSignIn} className='icon-border'> <img src={googleImg} className="google-icon" alt="" /> continue with google</button>
                             </div>
                             <div className='mt-2'>
-                                <p className='icon-border'> <img src={githubImg} className="google-icon" alt="" /> continue with github</p>
+                                <button onClick={githubSignIn} className='icon-border'> <img src={githubImg} className="google-icon" alt="" /> continue with github</button>
                             </div>
 
                         </div>
