@@ -49,8 +49,8 @@ const Header = () => {
                     </Nav>
                     <div className="row d-flex align-items-center">
                         <div className="col-lg-3">
-                            <div className='toggle-theme'>
-                            <DarkModeToggle onChange={setIsDarkMode}checked={isDarkMode}size={60}/>
+                            <div className='toggle-theme py-2'>
+                                <DarkModeToggle onChange={setIsDarkMode}checked={isDarkMode}size={60}/>
                             </div>
                         </div>
                            <div className="col-lg-9">
