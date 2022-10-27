@@ -40,6 +40,7 @@ const Header = () => {
                                <p className='mb-0'><Link to='/home'> Home </Link></p>
                                 <p className='mb-0'><Link to='/courses'> Courses </Link></p>
                                 <p className='mb-0'><Link to='/blog'> Blog </Link></p>
+                                <p className='mb-0'><Link to='/faq'> FAQ </Link></p>
                                 {
                                     user&&user.uid ? <></> : <><p className='mb-0'> <Link to='/login'> Login </Link></p>
                                     <p className='mb-0'><Link to='/register'> Register </Link></p></>

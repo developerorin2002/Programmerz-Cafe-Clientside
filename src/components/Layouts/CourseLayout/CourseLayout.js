@@ -7,7 +7,6 @@ const CourseLayout = () => {
     return (
         <div>
             <Header></Header>
-            
                 <div className="row">
                     <div className="col-lg-3">
                         <Sidenav></Sidenav>

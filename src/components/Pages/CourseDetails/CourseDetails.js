@@ -21,7 +21,7 @@ const CourseDetails = () => {
                                     course_description ? course_description.slice(0,150) +'...' : course_description
                                 }
                             </p>
-                            <button className='course-btn'><Link to={`/checkout/${id}`}>Check Out</Link></button>
+                            <button className='course-btn'><Link to={`/checkout/${id}`}>Get Premium Access</Link></button>
                         </div>
                     </div>
                     <div className="col-lg-6">
